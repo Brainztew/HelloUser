@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>form</title>
     <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
     <h1>Formulär!</h1>
+    <div>
+<!--         <form method="post" th:action="@{/new-member}" th:object="${newa}">
+            <input type="text" th:field="*{name}">
+            <input type="submit">
+        </form> -->
+        <form th:action="@{/new-member}"  method="post">
+            <input type="text" th:value="${sourceText}" name="sourceText"/>
+            <input type="submit" />
+        </form>
+    </div>
+    <a href="/">Hem!</a>
 </body>
 </html>

@@ -8,5 +8,12 @@
 </head>
 <body>
     <h1>Medlemmar!</h1>
+    <ul>
+        <li th:id="${member.id}" th:each="member : ${members}">
+            <span th:text="${member.name}"></span>
+            <a th:href="@{/removeMember/{memberId}(memberId=${member.id})}">[Ta Bort!]</a>
+        </li>
+    </ul>
+    <a href="/">Hem!</a>
 </body>
 </html>
