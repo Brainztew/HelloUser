@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-    <h1>Medlemmar!</h1>
+    <h1>Medlemmar som finns nu!</h1>
     <ul>
         <li th:id="${member.id}" th:each="member : ${members}">
             <span th:text="${member.name}"></span>
-            <a th:href="@{/removeMember/{memberId}(memberId=${member.id})}">[Ta Bort!]</a>
         </li>
     </ul>
     <a href="/">Hem!</a>

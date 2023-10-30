@@ -20,6 +20,7 @@ public class MemberlistController {
         members.add(new Member("Maria", 3));
         members.add(new Member("Annalotta", 4));
     }
+
     @GetMapping("/members")
     String getMembers(Model model) {
         model.addAttribute("members", members);
@@ -27,6 +28,7 @@ public class MemberlistController {
         System.out.println("Medlems sida!");
         return "members";
     }
+
     @PostMapping("/new-member")
     String newMember(Model model, @RequestParam String sourceText) {
         System.out.println("PostMapping " + sourceText);
@@ -38,9 +40,16 @@ public class MemberlistController {
     String removeMember(@PathVariable int memberId) {
         System.out.println("Remove item" + memberId);
         members.removeIf(member -> member.getId() == memberId);
-        return "redirect:/members";
+        return "redirect:/form";
     }
 
+    @GetMapping("/form")
+        String getForm(Model model) {
+        model.addAttribute("members", members);
+        model.addAttribute("newa", new Member(null, 0));
+        System.out.println("Formulär sida");
+        return "form";
+    } 
 
 
         

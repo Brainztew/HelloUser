@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form</title>
+    <title>Document</title>
     <link rel="stylesheet" href="/style.css" />
+
 </head>
 <body>
     <h1>Formulär!</h1>
+    <p>Skriv namnet på person du vill lägga till och tryck "skicka"</p>
     <div>
 <!--         <form method="post" th:action="@{/new-member}" th:object="${newa}">
             <input type="text" th:field="*{name}">
@@ -17,7 +19,16 @@
             <input type="text" th:value="${sourceText}" name="sourceText"/>
             <input type="submit" />
         </form>
+        <h1>Medlemmar!</h1>
+        <ul>
+            <li th:id="${member.id}" th:each="member : ${members}">
+                <span th:text="${member.name}"></span>
+                <a th:href="@{/removeMember/{memberId}(memberId=${member.id})}">[Ta Bort!]</a>
+            </li> 
+        </ul>
+        <a href="/">Hem!</a>
+
     </div>
-    <a href="/">Hem!</a>
+
 </body>
 </html>
