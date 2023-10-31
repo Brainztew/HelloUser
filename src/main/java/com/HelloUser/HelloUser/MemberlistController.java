@@ -32,7 +32,12 @@ public class MemberlistController {
     @PostMapping("/new-member")
     String newMember(Model model, @RequestParam String sourceText) {
         System.out.println("PostMapping " + sourceText);
+        if (sourceText == "") {
+            System.out.println("No postmapping");
+        }
+        else {
         members.add(new Member(sourceText, members.size()+ 1));
+        }
         return "redirect:/form"; 
     }
 

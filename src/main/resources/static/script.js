@@ -27,12 +27,11 @@ loginBtn.addEventListener("click", () => {
         admin = true;
         localStorage.setItem("admin", JSON.stringify(true));
         console.log(admin);
-        let admin2 = JSON.parse(localStorage.getItem("admin"));
-        console.log(admin2);
-        let link = document.createElement("a");
+        location.reload();
+/*         let link = document.createElement("a");
         link.innerText = "Admin";
         link.href="/form";
-        document.body.appendChild(link);
+        document.body.appendChild(link); */
 
 
     }})
