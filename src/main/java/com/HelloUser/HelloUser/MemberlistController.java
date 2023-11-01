@@ -14,12 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MemberlistController {
     private static final List<Member> members = new ArrayList<>();
-    static{
-        members.add(new Member("Adam", 1));
-        members.add(new Member("Jens", 2));
-        members.add(new Member("Maria", 3));
-        members.add(new Member("Annalotta", 4));
-    }
 
     @GetMapping("/members")
     String getMembers(Model model) {

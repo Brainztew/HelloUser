@@ -1,6 +1,3 @@
-console.log("Hej från js");
-
-
 if (JSON.parse(localStorage.getItem("admin"))) {
   if (admin = true) {
     console.log("admin finns");
@@ -14,12 +11,10 @@ if (JSON.parse(localStorage.getItem("admin"))) {
   } 
 } 
 
-
-
 loginBtn.addEventListener("click", () => {
   let user = document.getElementById("user");
   let password = document.getElementById("password");
-  console.log("knappjävel! " + user.value + password.value);
+  console.log("Användare: " + user.value + " " + "Lösen: " + password.value);
 
     if (user.value == "admin" && password.value == "admin") {
         console.log("Snälla funka!");
@@ -28,11 +23,6 @@ loginBtn.addEventListener("click", () => {
         localStorage.setItem("admin", JSON.stringify(true));
         console.log(admin);
         location.reload();
-/*         let link = document.createElement("a");
-        link.innerText = "Admin";
-        link.href="/form";
-        document.body.appendChild(link); */
-
 
     }})
 

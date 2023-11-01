@@ -11,10 +11,6 @@
     <h1>Formulär!</h1>
     <p>Skriv namnet på person du vill lägga till och tryck "skicka"</p>
     <div>
-<!--         <form method="post" th:action="@{/new-member}" th:object="${newa}">
-            <input type="text" th:field="*{name}">
-            <input type="submit">
-        </form> -->
         <form th:action="@{/new-member}"  method="post">
             <input type="text" th:value="${sourceText}" name="sourceText"/>
             <input type="submit" />
