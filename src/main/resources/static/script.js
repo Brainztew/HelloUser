@@ -1,30 +1,26 @@
-if (JSON.parse(localStorage.getItem("admin"))) {
-  if (admin = true) {
-    console.log("admin finns");
-    let link = document.createElement("a");
-    link.innerText = "Admin";
-    link.href="/form";
-    document.body.appendChild(link);}
-  else {
-    console.log("Skapar LS");
-    localStorage.setItem("admin", JSON.stringify(false))
-  } 
-} 
+
+if (localStorage.getItem("admin") === "true") {
+  console.log("admin exists");
+  let link = document.createElement("a");
+  link.innerText = "Admin";
+  link.href = "/form";
+  document.body.appendChild(link);
+} else {
+  console.log("Removing admin");
+  let remove = document.getElementById("adminContent");
+  if (remove) {
+    remove.remove();
+  }
+}
 
 loginBtn.addEventListener("click", () => {
   let user = document.getElementById("user");
   let password = document.getElementById("password");
-  console.log("Användare: " + user.value + " " + "Lösen: " + password.value);
+  console.log("User: " + user.value + ", Password: " + password.value);
 
-    if (user.value == "admin" && password.value == "admin") {
-        console.log("Snälla funka!");
-        let admin = JSON.parse(localStorage.getItem("admin"));
-        admin = true;
-        localStorage.setItem("admin", JSON.stringify(true));
-        console.log(admin);
-        location.reload();
-
-    }})
-
-
+  if (user.value === "admin" && password.value === "admin") {
+    localStorage.setItem("admin", "true");
+    location.reload();
+  }
+});
 

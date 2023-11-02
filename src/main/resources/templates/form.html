@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/style.css" />
-
+    <script src="script.js" defer></script>
 </head>
 <body>
     <h1>Formulär!</h1>
     <p>Skriv namnet på person du vill lägga till och tryck "skicka"</p>
-    <div>
+    <div id="adminContent">
         <form th:action="@{/new-member}"  method="post">
             <input type="text" th:value="${sourceText}" name="sourceText"/>
             <input type="submit" />
@@ -23,8 +23,8 @@
             </li> 
         </ul>
         <a href="/">Hem!</a>
-
     </div>
 
 </body>
+
 </html>

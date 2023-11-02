@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
+
 @Controller
 public class MemberlistController {
     private static final List<Member> members = new ArrayList<>();
@@ -42,15 +43,14 @@ public class MemberlistController {
         return "redirect:/form";
     }
 
+
     @GetMapping("/form")
         String getForm(Model model) {
         model.addAttribute("members", members);
         model.addAttribute("newa", new Member(null, 0));
         System.out.println("Formulär sida");
         return "form";
-    } 
-
-
-        
+        }
 }
+
 
